@@ -1,0 +1,5 @@
+package com.dbssecurity.ford.model;
+
+public class MyUserDetails {
+
+}

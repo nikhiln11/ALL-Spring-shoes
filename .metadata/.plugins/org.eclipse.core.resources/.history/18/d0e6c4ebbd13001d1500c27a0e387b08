@@ -1,0 +1,25 @@
+package com.dbssecurity.ford.controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+
+public class SecController {
+	@RequestMapping("/home")
+    public String showGreetings() {
+        
+        
+        return "Welcome to DBS For All Users";
+    }
+    
+    @RequestMapping("/user")
+    public String showUser() {
+        
+        
+        return "Welcome to DBS for User only";
+    }
+    @RequestMapping("/admin")
+    public String showForAdmin() {
+        
+        
+        return "Welcome to DBS for Admin only";
+    }
+}

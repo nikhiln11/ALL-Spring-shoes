@@ -1,0 +1,23 @@
+package com.dbsproj.ford.model;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class BankAccount {
+	@Id
+	private int customerId;
+	private String customerName;
+	private int balance;
+	private boolean od;
+	public BankAccount()
+	{
+		super();
+	}
+	public BankAccount(int cId,String cName,int bal,boolean o)
+	{
+		customerId=cId;
+		customerName=
+	}
+
+}

@@ -1,0 +1,31 @@
+package com.paynow.now.controller;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+//import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.paynow.now.model.Account;
+import com.paynow.now.service.PayService;
+
+@RestController
+public class PayController {
+ @Autowired
+ PayService myService;
+ @RequestMapping("/all")
+ public List<Account> showAll()
+ {
+	 return myService.getAllEmployees();
+ }
+ @PostMapping("/authenticate")
+ public Optional<Account> authenticateCustomer(@RequestParam String c)
+ {
+	 Optional<Account> a1=myService.authenticate(c);
+	 return a1;
+ }
+}

@@ -1,0 +1,5 @@
+package com.paynow.now.controller;
+
+public class PayController {
+
+}

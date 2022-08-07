@@ -1,0 +1,5 @@
+package com.dbsjsp.demo.model;
+
+public class Emp {
+
+}

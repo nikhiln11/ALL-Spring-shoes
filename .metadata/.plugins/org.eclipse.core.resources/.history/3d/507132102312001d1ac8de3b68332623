@@ -1,0 +1,5 @@
+package com.springjpa.ford.model;
+
+public class Student {
+
+}

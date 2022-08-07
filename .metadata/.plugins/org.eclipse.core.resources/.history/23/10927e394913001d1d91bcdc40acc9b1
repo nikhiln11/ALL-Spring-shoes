@@ -1,0 +1,27 @@
+package com.paynow.now.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.paynow.now.model.Account;
+import com.paynow.now.repo.AccountRepo;
+
+@Service
+public class PayService {
+	@Autowired
+	AccountRepo myRepo; 
+//	public List<Account> getAllEmployees()
+//	{
+//		List<Account> a = myRepo.findAll();
+//		return a;
+//	}
+	public Account authenticate(Account a)
+	{
+		Optional<Account> a1=myRepo.getById(a.getCustomerId());
+		return a1
+	}
+
+}

@@ -1,0 +1,18 @@
+package com.dbsjsp.demo.controller;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class MVCController {
+    
+    @Autowired
+    EmpService empService;
+    
+    @RequestMapping("/home")
+    public String showWelcomePage() {
+        
+        
+        return "Home.jsp";
+        
+        
+    }

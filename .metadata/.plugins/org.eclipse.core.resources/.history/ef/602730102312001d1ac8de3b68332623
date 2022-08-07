@@ -1,0 +1,5 @@
+package com.springjpa.ford.controller;
+
+public class JPAContoller {
+
+}

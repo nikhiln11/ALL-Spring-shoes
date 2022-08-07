@@ -1,0 +1,5 @@
+package com.dbssecurity.ford.configuration;
+
+public class SecConfig {
+
+}

@@ -1,0 +1,60 @@
+package com.example.demo.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.service.Service1;
+import com.example.demo.model.Employee;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+
+@RestController
+public class MyController {
+	@Autowired
+    Service1 dbsService;
+    
+    
+    @RequestMapping("/all")
+    
+    String getAllEmployees(){
+        
+        List<Employee> empList = dbsService.getAllEmployees();
+        String res="";
+        Iterator<Employee> iterator = empList.iterator();
+        while(iterator.hasNext()) {
+        	Employee e=iterator.next();
+        	res+="<h3>"+e.getId()+"		"+e.getName()+"		"+e.getSalary()+"<h3><br/>";
+        }
+        	return res;
+    }
+    @PostMapping("/addNewEmp")
+    public String addNewEmpRecord(@RequestBody Employee emp) {
+        
+        return dbsService.createNewEmp(emp);
+        
+    }
+    
+    @PutMapping("/updateEmp")
+    public String updateEmpRec(@RequestBody Employee emp) {
+        
+        return dbsService.updateEmp(emp);
+        
+    }
+    
+    @DeleteMapping("/deleteEmp")
+    public String deleteEmpRecord(@RequestParam int id) {
+        
+        return dbsService.deleteEmp(id);
+        
+    }
+}

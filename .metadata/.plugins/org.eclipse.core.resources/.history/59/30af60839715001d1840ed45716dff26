@@ -1,0 +1,5 @@
+package com.paynow.now.model;
+
+public class Sender {
+
+}

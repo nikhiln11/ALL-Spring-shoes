@@ -1,0 +1,5 @@
+package com.dbsproj.ford.model;
+
+public class BankAccount {
+
+}

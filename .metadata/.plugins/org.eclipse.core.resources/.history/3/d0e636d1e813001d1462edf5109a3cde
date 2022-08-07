@@ -1,0 +1,71 @@
+package com.dbssecurity.ford.model;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+public class MyUserDetails  implements UserDetails{
+    
+    
+    private String userName;
+    private String password;
+    private boolean active;
+    private List<GrantedAuthority> authorities;
+    
+    
+    public MyUserDetails(DBSSecurityUser dBSSecurityUser) {
+        
+        this.userName = dBSSecurityUser.getUserName();
+        this.password = dBSSecurityUser.getPassword();
+        this.active = dBSSecurityUser.isActive();
+        
+        String[] roles = dBSSecurityUser.getRole().split(",");
+        String eachRole ="";
+        
+        List<GrantedAuthority> localAuth = new ArrayList<GrantedAuthority>();
+        
+        for(int i=0;i<roles.length;i++) {
+            eachRole = roles[i];
+            
+            localAuth.add(new SimpleGrantedAuthority(eachRole));
+        }
+        this.authorities = localAuth;
+        
+        
+    }
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return this.authorities;
+    }
+    @Override
+    public String getPassword() {
+        return this.password;
+    }
+    @Override
+    public String getUsername() {
+        return this.userName;
+    }
+	@Override
+	public boolean isAccountNonExpired() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+	@Override
+	public boolean isAccountNonLocked() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+	@Override
+	public boolean isCredentialsNonExpired() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	@Override
+	public boolean isEnabled() {
+		// TODO Auto-generated method stub
+		return false;
+	}}

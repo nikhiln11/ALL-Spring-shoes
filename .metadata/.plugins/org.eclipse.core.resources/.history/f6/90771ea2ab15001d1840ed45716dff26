@@ -1,0 +1,10 @@
+package com.paynow.now.model;
+
+import javax.persistence.Entity;
+
+@Entity
+public class BIC {
+ String bic;
+ String bankName;
+ 
+}

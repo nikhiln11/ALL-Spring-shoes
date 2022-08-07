@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete element from project &apos;DbSpring&apos;&#x0D;&#x0A;- Original project: &apos;DbSpring&apos;&#x0D;&#x0A;- Original element: &apos;DbSpring/src/main/java/com.dbspring.shorty.controller&apos;" description="Delete element" element1="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.dbspring.shorty.controller" element2="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.dbspring.shorty" element3="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.dbspring" elements="3" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1659335020737" subPackages="false" version="1.0"/>
+</session>

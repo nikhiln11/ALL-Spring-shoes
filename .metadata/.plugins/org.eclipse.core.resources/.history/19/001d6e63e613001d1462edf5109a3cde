@@ -1,0 +1,5 @@
+package com.paynow.now.configuration;
+
+public class ProjConfig {
+
+}

@@ -1,0 +1,18 @@
+public class demo {
+    public static void main(String[] args) {
+    
+        
+        DBSStudent stu1 = DBSStudent.getInstance(123,"Hari",88);
+        DBSStudent stu2 = DBSStudent.getInstance(123,"Hari",88);
+        DBSStudent stu3 = DBSStudent.getInstance(123,"Hari",88);
+        DBSStudent stu4 = DBSStudent.getInstance(123,"Hari",88);
+        
+        if(stu1 == stu4)  System.out.println(" Both are same....");
+        else System.out.println(" Both are not equal....");
+        
+        
+        
+        
+        
+    }
+}
